@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 12px;
+    }
+    
+    tr:nth-child(odd) {background-color: #25c22574;}
+    </style>
+
+<body>
+    <h3>Kailash Lab Assignment1</h3>
+<table id="naxTable" border="1"> 
+  <tr>
+    <td>rw1 cl1</td> 
+    <td>rw1 cl2</td>
+  </tr> 
+  <tr>
+    <td>rw2 cl1</td> 
+    <td>rw2 cl2</td>
+  </tr> 
+    <tr>
+    <td>rw3 cl1</td> 
+    <td>rw3 cl2</td>
+  </tr> 
+    <tr>
+    <td>rw4 cl1</td> 
+    <td>rw4 cl2</td>
+  </tr> 
+    <tr>
+    <td>rw5 cl1</td> 
+    <td>rw5 cl2</td>
+  </tr> 
+</table><br> 
+<input type="button" onclick="insertRowBottom()" value="Insert row" style="background-color: blue;">  
+<input type="button" onclick="deleteRowTop()" value="Delete row" style="background-color: green;">  
+</br>
+<script>
+    var x = 5;
+    
+    function insertRowBottom() {
+      var optbl = document.getElementById("naxTable");
+      x++;
+      var ro = optbl.insertRow(-1);
+      var tablecell1 = ro.insertCell(0);
+      var tablecell2 = ro.insertCell(1);
+      tablecell1.innerHTML = "rw " + x + " cl";
+      tablecell2.innerHTML = "rw " + x + " cl";
+    }
+    
+    function deleteRowTop() {
+      var optbl = document.getElementById("naxTable");
+      if (optbl.rows.length > 0) {
+        optbl.deleteRow(0);
+      } else {
+        alert("No more content left!");
+      }
+    }
+    </script>
+</body>
+</html>
